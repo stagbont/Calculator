@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #244C66;
-    --primary-secondary-color: #587B89;
-    --secondary-color: #7DB290;
+    --primary-color: #ecf2f3;
+    --primary-secondary-color: #4a738f;
+    --secondary-color: #407D6C;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -65,6 +65,16 @@ main {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+}
+
+.day__container {
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.night__container {
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 /* Day / Night icon */
