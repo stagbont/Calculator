@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #244C66;
+    --primary-secondary-color: #587B89;
+    --secondary-color: #7DB290;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    display: block;
+    height: 100vh;
+    background-color: #B5C7CC;
+}
+
+/* Calculator Background */
+.calculator__container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding-top: 30px;
+    height: 100vh;
+}
+
+/* Day / Night container */
+.dayNight__container {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 50px;
+    background: var(--primary-secondary-color);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+/* Day / Night container */
+.day__container, .night__container {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* Day / Night icon */
+.day__img, .moon__img {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+/* Day / Night container when hovered */
+.day__container:hover, .night__container:hover {
+    background-color: var(--primary-color);
+}
+
+/* Day / Night icon when hovered */
+.day__img:hover, .moon__img:hover {
+    color: var(--primary-secondary-color);
+}
+
+/* Day / Night icon when clicked */
+.day__img:active, .moon__img:active {
+    color: var(--secondary-color);
+}
+
+
+
+
+/* Display Area */
+.display__area {
+    padding-top: 90px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.expression__line, .input__line {
+    text-align: right;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.expression__line {
+    font-size: 24px;
+}
+
+.input__line {
+    font-size: 50px;
+}
+

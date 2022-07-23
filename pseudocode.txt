@@ -1,0 +1,9 @@
+create a function for add
+create a function for substract
+create a function for multiply
+create a function for divide
+create a function for modular
+create an operator with these auguments
+    operator
+    two(2) numbers
+
