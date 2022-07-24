@@ -168,7 +168,11 @@ equalsKey.addEventListener('click', calculate);
 function calculate() {
     if (expressionLine.textContent != '') {
         let expression = expressionLine.textContent;
-        let answer = (eval(expression)).toFixed(8);
+        if (typeof(answer) === 'float') {
+            let answer = (eval(expression)).tofixed(4);
+        } else {
+            let answer = (eval(expression));
+        }
         inputLine.textContent = answer;
     }
 }
