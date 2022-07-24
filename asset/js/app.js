@@ -168,6 +168,7 @@ equalsKey.addEventListener('click', calculate);
 function calculate() {
     if (expressionLine.textContent != '') {
         let expression = expressionLine.textContent;
+<<<<<<< HEAD
         let answer = (eval(expression));
         let answerText = answer.toString();
         let answerTestArray = answerText.split('');
@@ -179,5 +180,13 @@ function calculate() {
         else {
             inputLine.textContent = answer;
         }
+=======
+        if (typeof(answer) === 'float') {
+            let answer = (eval(expression)).tofixed(4);
+        } else {
+            let answer = (eval(expression));
+        }
+        inputLine.textContent = answer;
+>>>>>>> a6470bbf65f27e66c4b008408c7773ba2739b4d7
     }
 }
