@@ -71,5 +71,46 @@ function operationKeys () {
     return operationKeys;
 }
 
+// Listen for a click on each key and print the value into the display screen
+numKeys.forEach(numKey => numKey.addEventListener('click', printToScreen))
+
+// function for print to screen
+function printToScreen() {
+    inputLine.textContent = this.textContent;
+    let expression = this.textContent;
+    expressionLine.append(expression);
+}
+
+// Get the clear element
+const clearKey = document.querySelector(".clear");
+
+// listen for a click on the clear key
+clearKey.addEventListener('click', clear)
+
+// function to clear the screen
+function clear() {
+    inputLine.textContent = '0';
+    expressionLine.textContent = '';
+}
+
+// Get the delete key element
+const deleteKey = document.querySelector('.delete');
+
+// listen for a click on the delete key
+deleteKey.addEventListener('click', deleteFun)
+
+// function to delete
+function deleteFun () {
+    if(expressionLine.textContent != '') {
+        let expression = (expressionLine.textContent).split('');
+        expression.pop();
+        let deleteResult = expression.join("");
+        inputLine.textContent = '0';
+        expressionLine.textContent = deleteResult;
+    }
+}
+
+
+
 
 
