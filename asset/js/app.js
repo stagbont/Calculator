@@ -39,3 +39,37 @@ function nightChange() {
 }
 
 
+
+
+/****** 
+ * 
+ * THE CALCULATOR FUNTIONALITY
+ * 
+ * *******/
+
+// get both display areas
+const expressionLine = document.getElementById('expression-line'),
+      inputLine = document.getElementById('input-line');
+
+// get the keys
+const keys = Array.from(document.querySelectorAll('#key'));
+
+// loop through each key to filter if it contains a num__key in it class
+let numKeys = keys.filter(key => (key.classList.contains('num__key')));
+
+// Function that loops through each key to filter if it contains a operators in its class
+function operationKeys () {
+    let rootkey = keys.filter(key => (key.classList.contains('root')));
+    let percentkey = keys.filter(key => (key.classList.contains('percent')));
+    let dividekey = keys.filter(key => (key.classList.contains('divide')));
+    let timeskey = keys.filter(key => (key.classList.contains('times')));
+    let minuskey = keys.filter(key => (key.classList.contains('minus')));
+    let pluskey = keys.filter(key => (key.classList.contains('plus')));
+
+    // Join the following operators to form a single array
+    let operationKey = rootkey.concat(percentkey, dividekey, timeskey, minuskey, pluskey);
+    return operationKeys;
+}
+
+
+

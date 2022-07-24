@@ -172,6 +172,11 @@ main {
     background: var(--secondary-color);
 }
 
+.dot {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 .key:hover {
     background: var(--secondary-color);
     color: var(--primary-color);
@@ -180,6 +185,11 @@ main {
 .num__key:hover {
     background: var(--primary-color);
     color: var(--secondary-color);
+}
+
+.dot:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .bar__container {
