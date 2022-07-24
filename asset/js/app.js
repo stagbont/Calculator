@@ -57,20 +57,6 @@ const keys = Array.from(document.querySelectorAll('#key'));
 // loop through each key to filter if it contains a num__key in it class
 let numKeys = keys.filter(key => (key.classList.contains('num__key')));
 
-// Function that loops through each key to filter if it contains a operators in its class
-function operationKeys () {
-    let rootkey = keys.filter(key => (key.classList.contains('root')));
-    let percentkey = keys.filter(key => (key.classList.contains('percent')));
-    let dividekey = keys.filter(key => (key.classList.contains('divide')));
-    let timeskey = keys.filter(key => (key.classList.contains('times')));
-    let minuskey = keys.filter(key => (key.classList.contains('minus')));
-    let pluskey = keys.filter(key => (key.classList.contains('plus')));
-
-    // Join the following operators to form a single array
-    let operationKey = rootkey.concat(percentkey, dividekey, timeskey, minuskey, pluskey);
-    return operationKeys;
-}
-
 // Listen for a click on each key and print the value into the display screen
 numKeys.forEach(numKey => numKey.addEventListener('click', printToScreen))
 
@@ -110,7 +96,79 @@ function deleteFun () {
     }
 }
 
+// get the operators key
+const plusKey = document.querySelector('.plus');
+const minusKey = document.querySelector('.minus');
+const timesKey = document.querySelector('.times');
+const divideKey = document.querySelector('.divide');
+const modulaKey = document.querySelector('.percent');
+
+// when there is a click on the operator key and append the operator to the experession
+plusKey.addEventListener('click', plusOperator);
+minusKey.addEventListener('click', minusOperator);
+timesKey.addEventListener('click', timesOperator);
+divideKey.addEventListener('click', divideOperator);
+modulaKey.addEventListener('click', modulaOperator);
 
 
+// function to append plus operator to the expression
+function plusOperator() {
+        inputLine.textContent = '0';
+        let Operator = ' + ' ;
+        expressionLine.append(Operator);
+}
+
+// function to append minus operator to the expression
+function minusOperator() {
+        inputLine.textContent = '0';
+        let Operator = ' - ' ;
+        expressionLine.append(Operator);
+}
+
+// function to append times operator to the expression
+function timesOperator() {
+    if (expressionLine.textContent != ''
+            // &&  (expressionLine.textContent).endsWith("+") ===  "false"
+            //     && (expressionLine.textContent).endsWith("-")=== "false"
+            //         && (expressionLine.textContent).endsWith("/")=== "false"
+            ) {
+        inputLine.textContent = '0';
+        let Operator = ' * ' ;
+        expressionLine.append(Operator);
+    }
+}
+
+// function to append divide operator to the expression
+function divideOperator() {
+    if (expressionLine.textContent != ''
+            // &&  (expressionLine.textContent).endsWith("+") ===  "false"
+            //     && (expressionLine.textContent).endsWith("-")=== "false"
+            //         && (expressionLine.textContent).endsWith("*")=== "false"
+            ) {
+        inputLine.textContent = '0';
+        let Operator = ' / ' ;
+        expressionLine.append(Operator);
+    }
+}
 
 
+// function to append plus operator to the expression
+function modulaOperator() {
+    inputLine.textContent = '0';
+    let Operator = ' % ' ;
+    expressionLine.append(Operator);
+}
+// get the equal to key
+const equalsKey = document.querySelector(".equals");
+
+// When clicked it should compute
+equalsKey.addEventListener('click', calculate);
+
+// Calculate functions
+function calculate() {
+    if (expressionLine.textContent != '') {
+        let expression = expressionLine.textContent;
+        let answer = Math.floor(eval(expression));
+        inputLine.textContent = answer;
+    }
+}
