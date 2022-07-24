@@ -168,7 +168,7 @@ equalsKey.addEventListener('click', calculate);
 function calculate() {
     if (expressionLine.textContent != '') {
         let expression = expressionLine.textContent;
-        let answer = Math.floor(eval(expression));
+        let answer = (eval(expression)).toFixed(8);
         inputLine.textContent = answer;
     }
 }
