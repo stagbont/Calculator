@@ -168,7 +168,16 @@ equalsKey.addEventListener('click', calculate);
 function calculate() {
     if (expressionLine.textContent != '') {
         let expression = expressionLine.textContent;
-        let answer = (eval(expression)).toFixed(8);
-        inputLine.textContent = answer;
+        let answer = (eval(expression));
+        let answerText = answer.toString();
+        let answerTestArray = answerText.split('');
+        
+        if (answerTestArray = answerTestArray.includes('.')) {
+            inputLine.textContent = answer.toFixed(3);
+        }
+
+        else {
+            inputLine.textContent = answer;
+        }
     }
 }
